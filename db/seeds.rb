@@ -32,13 +32,31 @@ coaches.each do |key, value|
 	coach = Coach.new(name: key, time_zone: value[:time_zone])
 	coach.save!
 
+	puts coach.name
+
 	value[:availabilities].each do |avail|
+		# create 30 min blocks for each
 		a = AvailabilityBlock.new(coach_id: coach.id,
 			                      day: avail[:day],
 			                      start_time: avail[:start],
 			                      end_time: avail[:end])
-		# puts coach.name
-		# puts a.day
-		a.save!
+
+		puts avail[:day]
+		
+		current_start = a.start_time
+		current_end = a.start_time + 30.minutes
+		while current_end <= a.end_time
+			b = AvailabilityBlock.new(coach_id: coach.id,
+			                          day: avail[:day],
+			                          start_time: current_start,
+			                          end_time: current_end)
+			b.save!
+
+			puts b.start_time
+
+			current_start += 30.minutes
+			current_end += 30.minutes
+		end
+
 	end
 end
