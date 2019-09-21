@@ -10,24 +10,18 @@
       </ul>
     </div>
   <% end %>
+  
+
+  <p><%= "Coach: %s" % coach.name %></p>
+  <p><%= "Date: %s" % date %></p>
+  <p><%= "Time: %s %s" % [availability_block.start_time.strftime("%I:%M %p"), coach.time_zone] %></p>
+
+  <%= form.hidden_field :coach_id, value: coach.id %>
+  <%= form.hidden_field :availability_block_id, value: availability_block.id %>
+  <%= form.hidden_field :date, value: date %>
 
   <div class="field">
-    <%= form.label :coach_id %>
-    <%= form.number_field :coach_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :availability_block_id %>
-    <%= form.number_field :availability_block_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :client_name %>
+    <%= form.label "Enter your name:" %>
     <%= form.text_field :client_name %>
   </div>
 

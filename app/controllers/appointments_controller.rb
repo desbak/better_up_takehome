@@ -7,14 +7,17 @@ class AppointmentsController < ApplicationController
   #   @appointments = Appointment.all
   # end
 
-  # # GET /appointments/1
-  # # GET /appointments/1.json
-  # def show
-  # end
+  # GET /appointments/1
+  # GET /appointments/1.json
+  def show
+  end
 
   # GET /appointments/new
   def new
     @appointment = Appointment.new
+    @coach = Coach.find(params[:coach_id])
+    @availability_block = AvailabilityBlock.find(params[:availability_block_id])
+    @date = params[:date]
   end
 
   # # GET /appointments/1/edit
@@ -24,7 +27,10 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
-    @appointment = Appointment.new(appointment_params)
+    @appointment = Appointment.new(appt_params)
+    @coach = Coach.find(appt_params[:coach_id])
+    @availability_block = AvailabilityBlock.find(appt_params[:availability_block_id])
+    @date = appt_params[:date]
 
     respond_to do |format|
       if @appointment.save
@@ -41,7 +47,7 @@ class AppointmentsController < ApplicationController
   # # PATCH/PUT /appointments/1.json
   # def update
   #   respond_to do |format|
-  #     if @appointment.update(appointment_params)
+  #     if @appointment.update(appt_params)
   #       format.html { redirect_to @appointment, notice: 'Appointment was successfully updated.' }
   #       format.json { render :show, status: :ok, location: @appointment }
   #     else
@@ -68,7 +74,7 @@ class AppointmentsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def appointment_params
+    def appt_params
       params.require(:appointment).permit(:coach_id, :availability_block_id, :date, :client_name)
     end
 end

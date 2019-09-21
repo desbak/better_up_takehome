@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Coach:</strong>
-  <%= @appointment.coach_id %>
+  <strong>Coach name:</strong>
+  <%= @appointment.coach.name %>
 </p>
 
 <p>
-  <strong>Availability block:</strong>
-  <%= @appointment.availability_block_id %>
+  <strong>Time:</strong>
+  <%= @appointment.availability_block.start_time.strftime("%I:%M %p") %>
 </p>
 
 <p>
   <strong>Date:</strong>
-  <%= @appointment.date %>
+  <%= @appointment.date.strftime('%A %Y-%m-%d') %>
 </p>
 
 <p>
@@ -20,5 +20,4 @@
   <%= @appointment.client_name %>
 </p>
 
-<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
-<%= link_to 'Back', appointments_path %>
+<%= link_to 'View Coaches', coaches_path %>

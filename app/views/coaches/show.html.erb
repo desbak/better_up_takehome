@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+	<%= link_to 'Choose a Different Coach', coaches_path %>
+</p>
+<p>
   <strong>Coach:</strong>
   <%= @coach.name %>
 </p>
@@ -23,9 +26,8 @@
 	<% a[:availability].each do |block| %>
 		<div>
 			<%= link_to(block[:start_time], new_appointment_path(:coach_id => @coach,
-				                                                 :date => a[:date],
-			                                                     :availability_block_id => block[:id])) %>
-			                                         
+			                                                     :availability_block_id => block[:id],
+				                                                 :date => a[:date])) %>
 		</div>
 
 
