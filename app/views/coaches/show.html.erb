@@ -1,14 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Coach:</strong>
   <%= @coach.name %>
 </p>
 
 <p>
-  <strong>Time zone:</strong>
-  <%= @coach.time_zone %>
+  Please select a 30 minute timeslot from the availabilities below.
 </p>
 
-<%= link_to 'Edit', edit_coach_path(@coach) %> |
-<%= link_to 'Back', coaches_path %>
+<p>
+  All times listed are in the coach's local time zone of 
+  <strong><%= @coach.time_zone %></strong>
+</p>
+
+<% @availabilities.each do |a| %>
+	<h3><%= "%{day}, %{date}" % a %></h3>
+	<% if a[:availability].length == 0 %> 
+		<p>No availability on this date</p>
+	<% end %>
+
+	<% a[:availability].each do |block| %>
+		<div>
+			<%= link_to(block[:start_time], new_appointment_path(:coach_id => @coach,
+				                                                 :date => a[:date],
+			                                                     :availability_block_id => block[:id])) %>
+			                                         
+		</div>
+
+
+	<% end %>
+
+
+
+<% end %>

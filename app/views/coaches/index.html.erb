@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Coaches</h1>
+<h1>Select A Coach To Make An Appointment</h1>
 
 <table>
   <thead>
@@ -16,14 +16,10 @@
       <tr>
         <td><%= coach.name %></td>
         <td><%= coach.time_zone %></td>
-        <td><%= link_to 'Show', coach %></td>
-        <td><%= link_to 'Edit', edit_coach_path(coach) %></td>
-        <td><%= link_to 'Destroy', coach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View Availability', coach %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Coach', new_coach_path %>

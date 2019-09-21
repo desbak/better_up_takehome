@@ -13,7 +13,7 @@
 
 class Appointment < ApplicationRecord
 	belongs_to :coach
-	belongs_to :availability_blocks
+	belongs_to :availability_block
 
 	validates :availability_block_id, uniqueness: { scope: [:coach_id, :date] }
 	validates :client_name, presence: true, length: { maximum: 255 }
