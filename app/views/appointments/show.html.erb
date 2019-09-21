@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Coach:</strong>
+  <%= @appointment.coach_id %>
+</p>
+
+<p>
+  <strong>Availability block:</strong>
+  <%= @appointment.availability_block_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @appointment.date %>
+</p>
+
+<p>
+  <strong>Client name:</strong>
+  <%= @appointment.client_name %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

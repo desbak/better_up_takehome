@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Coach:</strong>
+  <%= @availability_block.coach_id %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @availability_block.day %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @availability_block.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @availability_block.end_time %>
+</p>
+
+<%= link_to 'Edit', edit_availability_block_path(@availability_block) %> |
+<%= link_to 'Back', availability_blocks_path %>

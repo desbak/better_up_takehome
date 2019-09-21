@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_031705) do
+ActiveRecord::Schema.define(version: 2019_09_21_043514) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.integer "coach_id"
+    t.integer "availability_block_id"
+    t.date "date"
+    t.string "client_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["availability_block_id"], name: "index_appointments_on_availability_block_id"
+    t.index ["coach_id"], name: "index_appointments_on_coach_id"
+  end
+
+  create_table "availability_blocks", force: :cascade do |t|
+    t.integer "coach_id"
+    t.string "day"
+    t.time "start_time"
+    t.time "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coach_id"], name: "index_availability_blocks_on_coach_id"
+  end
 
   create_table "coaches", force: :cascade do |t|
     t.string "name"
