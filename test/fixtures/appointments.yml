@@ -1,13 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   coach_id: 1
   availability_block_id: 1
-  date: 2019-09-20
-  client_name: MyString
-
-two:
-  coach_id: 1
-  availability_block_id: 1
-  date: 2019-09-20
-  client_name: MyString
+  date: '2019-09-23'
+  client_name: MyName

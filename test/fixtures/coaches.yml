@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  time_zone: MyString
+  id: 1
+  name: Coach1
+  time_zone: (GMT-06:00) Central Time (US & Canada)
 
 two:
-  name: MyString
-  time_zone: MyString
+  id: 2
+  name: Coach2
+  time_zone: (GMT-06:00) America/North_Dakota/New_Salem

@@ -1,24 +1,30 @@
-# README
+# Readme / Quick Start
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Version Requirements:
 
-Things you may want to cover:
+* Ruby 2.6.3
+* Rails 5.2.3
+* Database: SQLite
 
-* Ruby version
 
-* System dependencies
+## Quick Start
+* Install the above requirements, as well as dependencies.
+```
+bundle
+```
+* Create the DB, migrate, and seed with initial data:
+```
+rake db:create db:migrate db:seed
+```
+* Run the server!
+```
+rails s
+```
+* Go to localhost:3000
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Running Tests
+* TODO - currently only testing very basic appointment creation
+```
+rails test
+```

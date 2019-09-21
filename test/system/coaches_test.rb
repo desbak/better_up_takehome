@@ -10,36 +10,36 @@ class CoachesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Coaches"
   end
 
-  test "creating a Coach" do
-    visit coaches_url
-    click_on "New Coach"
+  # test "creating a Coach" do
+  #   visit coaches_url
+  #   click_on "New Coach"
 
-    fill_in "Name", with: @coach.name
-    fill_in "Time zone", with: @coach.time_zone
-    click_on "Create Coach"
+  #   fill_in "Name", with: @coach.name
+  #   fill_in "Time zone", with: @coach.time_zone
+  #   click_on "Create Coach"
 
-    assert_text "Coach was successfully created"
-    click_on "Back"
-  end
+  #   assert_text "Coach was successfully created"
+  #   click_on "Back"
+  # end
 
-  test "updating a Coach" do
-    visit coaches_url
-    click_on "Edit", match: :first
+  # test "updating a Coach" do
+  #   visit coaches_url
+  #   click_on "Edit", match: :first
 
-    fill_in "Name", with: @coach.name
-    fill_in "Time zone", with: @coach.time_zone
-    click_on "Update Coach"
+  #   fill_in "Name", with: @coach.name
+  #   fill_in "Time zone", with: @coach.time_zone
+  #   click_on "Update Coach"
 
-    assert_text "Coach was successfully updated"
-    click_on "Back"
-  end
+  #   assert_text "Coach was successfully updated"
+  #   click_on "Back"
+  # end
 
-  test "destroying a Coach" do
-    visit coaches_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+  # test "destroying a Coach" do
+  #   visit coaches_url
+  #   page.accept_confirm do
+  #     click_on "Destroy", match: :first
+  #   end
 
-    assert_text "Coach was successfully destroyed"
-  end
+  #   assert_text "Coach was successfully destroyed"
+  # end
 end
